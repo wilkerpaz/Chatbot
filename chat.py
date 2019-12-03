@@ -2,7 +2,7 @@ from decouple import config
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 
 # Configuration
-CHAT_ID = config('CHAT_ID')
+CHAT_ID_GROUP = config('CHAT_ID_GROUP')
 TOKEN = config('TOKEN')
 
 
@@ -18,7 +18,7 @@ def contact(update, context):
 
 
 def forward(update, context):
-    update.message.forward(chat_id=CHAT_ID)
+    update.message.forward(chat_id=CHAT_ID_GROUP)
 
 
 def answer(update, context):
