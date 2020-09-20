@@ -37,8 +37,7 @@ updater = Updater(TOKEN, use_context=True)
 dp = updater.dispatcher
 
 dp.add_handler(ConversationHandler(
-    entry_points=[CommandHandler('contact', contact)],
-    states={1: [MessageHandler(Filters.text, forward)], },
+    entry_points=[CommandHandler('contact', contact)], states={1: [MessageHandler(Filters.text, forward)], },
     fallbacks=[CommandHandler('start', start)]))
 
 dp.add_handler(CommandHandler(['hello', 'start'], start))
